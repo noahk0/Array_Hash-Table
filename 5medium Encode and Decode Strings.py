@@ -1,13 +1,13 @@
 def encode(self, strs: List[str]) -> str:
-    str = ''
+    s = ''
 
     for string in strs:
-        str += str(len(string)) + ' ' + string
+        s += str(len(string)) + ' ' + string
 
-    return str
+    return s
 
 def decode(self, s: str) -> List[str]:
-    str = []
+    strs = []
 
     while s:
         num = ''
@@ -16,7 +16,7 @@ def decode(self, s: str) -> List[str]:
             num += s[0]
             s = s[1 :]
 
-        str.append(s[1 : int(num) + 1])
+        strs.append(s[1 : int(num) + 1])
         s = s[int(num) + 1 :]
     
-    return str
+    return strs
