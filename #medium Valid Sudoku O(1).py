@@ -6,9 +6,9 @@ def isValidSudoku(self, board: List[List[str]]) -> bool:
 
         for j in range(9):
             if board[i][j] != '.':
-                num, idx = int(board[i][j]), i // 3 * 3 + j // 3
+                num = int(board[i][j])
 
-                if num in row or num in col[j] or num in box[idx]:
+                if num in box[idx := i // 3 * 3 + j // 3] or num in row or num in col[j]:
                     return False
 
                 row.add(num)
